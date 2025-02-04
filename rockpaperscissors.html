@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors game &#128522;</title>
+    <link rel="stylesheet" href="rockpaperscissors.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <p class="title">Rock Paper Scissors</p>
+    <div class="buttons-container">
+      <button onclick="playGame('Rock');" class="move-button">
+        <img src="rock-emoji.png" alt="rock" class="move-icon" />
+      </button>
+      <button onclick="playGame('Paper');" class="move-button">
+        <img src="paper-emoji.png" alt="paper" class="move-icon" />
+      </button>
+      <button onclick="playGame('Scissors');" class="move-button">
+        <img src="scissors-emoji.png" alt="scissors" class="move-icon" />
+      </button>
+    </div>
+    <p class="js-result result"></p>
+    <p class="js-moves"></p>
+    <p class="js-score" class="score"></p>
+    <button
+      onclick="
+      score.wins = 0;
+      score.losses = 0;
+      score.ties = 0;
+      localStorage.removeItem('score'); 
+      updateScoreElement();"
+      class="reset-score"
+    >
+      Reset Score
+    </button>
+
+    <button
+      class="auto-play"
+      onclick="
+      autoPlay();
+    "
+    >
+      Auto Play
+    </button>
+
+    <div class="feedback-container">
+      <button
+        class="feedback-button"
+        id="likeBtn"
+        onclick="handleFeedback('like')"
+      >
+        <i class="fas fa-thumbs-up"></i>
+      </button>
+      <button
+        class="feedback-button"
+        id="dislikeBtn"
+        onclick="handleFeedback('dislike')"
+      >
+        <i class="fas fa-thumbs-down"></i>
+      </button>
+    </div>
+
+    <script src="rps.js"></script>
+  </body>
+</html>
